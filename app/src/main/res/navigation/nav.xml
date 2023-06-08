@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/homeFragment">
+
+
+  <fragment
+      android:id="@+id/homeFragment"
+      android:name="com.example.tmdb_android_clone.ui.fragments.HomeFragment"
+      android:label="fragment_home"
+      tools:layout="@layout/fragment_home" >
+    <action
+        android:id="@+id/action_homeFragment_to_detailsFragment"
+        app:destination="@id/detailsFragment" />
+  </fragment>
+
+  <fragment
+      android:id="@+id/favouriteListFragment"
+      android:name="com.example.tmdb_android_clone.ui.fragments.FavouriteListFragment"
+      android:label="fragment_favourite_list"
+      tools:layout="@layout/fragment_favourite_list" >
+    <action
+        android:id="@+id/action_favouriteListFragment_to_detailsFragment"
+        app:destination="@id/detailsFragment" />
+  </fragment>
+  <fragment
+      android:id="@+id/detailsFragment"
+      android:name="com.example.tmdb_android_clone.ui.fragments.DetailsFragment"
+      android:label="fragment_details"
+      tools:layout="@layout/fragment_details" >
+    <argument
+        android:name="movieid"
+        app:argType="integer"
+        android:defaultValue="0" />
+  </fragment>
+
+</navigation>
